@@ -15,7 +15,7 @@ import imgNonly from '../../../public/nonly-stay-with-me.jpg';
 
 export function Footer() {
   return (
-    <footer className='bg-zinc-800 border-zinc-700 px-6 py-4 flex items-center justify-between'>
+    <footer className='bg-zinc-800 border-zinc-700 px-6 py-4 flex items-center justify-between static_footer'>
       <div className='flex items-center gap-3'>
         <Image src={imgNonly} width={56} height={56} alt='Capa da musica Akari' />
         <div className='flex flex-col'>
