@@ -4,17 +4,17 @@ export function SideBar() {
   const navItems = [
     {
       id: 1,
-      name: 'Home',
+      name: 'Inicio',
       icon: <HomeIcon />,
     },
     {
       id: 2,
-      name: 'Search',
+      name: 'Pesquisar',
       icon: <Search />,
     },
     {
       id: 3,
-      name: 'Your Library',
+      name: 'Sua Biblioteca',
       icon: <Library />,
     },
   ];
@@ -29,7 +29,7 @@ export function SideBar() {
       {navItem.name}
     </a>
   ));
-  
+
   const playlists = [
     {
       id: 1,
@@ -63,7 +63,7 @@ export function SideBar() {
         <div className='w-3 h-3 bg-green-500 rounded-full' />
       </div>
 
-      <nav className='space-y-5 mt-5'>{listNavItems}</nav>
+      <nav className='space-y-5 mt-10'>{listNavItems}</nav>
 
       <nav className='mt-6 pt-5 border-t border-zinc-800 flex flex-col gap-2'>{listPlaylist}</nav>
     </aside>
