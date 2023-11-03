@@ -19,8 +19,8 @@ export function Footer() {
       <div className='flex items-center gap-3'>
         <Image src={imgNonly} width={56} height={56} alt='Capa da musica Akari' />
         <div className='flex flex-col'>
-          <strong className='font-normal'>Name Music</strong>
-          <span className='text-xs text-zinc-400'>Artist</span>
+          <strong className='font-normal'>Stay With Me</strong>
+          <span className='text-xs text-zinc-400'>Nonly</span>
         </div>
       </div>
 
