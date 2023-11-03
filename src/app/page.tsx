@@ -44,11 +44,13 @@ const Home = () => {
           </div>
           <h1 className='font-semibold text-3xl mt-10'>Bom Dia</h1>
 
-          <div className='grid grid-cols-3 gap-4 mt-4'>{musics}</div>
+          <div className='grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-4 mt-4   '>
+            {musics}
+          </div>
 
-          <h2 className='font-semibold text-2xl mt-10'>Feito para  Murilo</h2>
+          <h2 className='font-semibold text-2xl mt-10'>Feito para Murilo</h2>
 
-          <div className='grid grid-cols-6 gap-4 mt-4'>{mix}</div>
+          <div className='grid grid-cols-2 tablet:grid-cols-3 desktop:grid-cols-4 gap-4 mt-4'>{mix}</div>
         </main>
       </div>
       <Footer />
