@@ -1,20 +1,31 @@
 import React from 'react';
-import {
-  ChevronLeft,
-  ChevronRight,
-  Play,
-
-} from 'lucide-react';
-
+import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
+import { infoArtists } from './infoArtists';
 import Image from 'next/image';
-import imgAkari from '../../public/akari-img.jpg';
-import imgPolyphia from '../../public/foto-album-polyphia.jpg';
-import imgJapa from '../../public/foto-album-japa.jpg';
-import imgNonly from '../../public/nonly-stay-with-me.jpg';
-import imgTwentyOnePilots from '../../public/ride-twenty-one-pilots.jpg';
-import imgLilPeep from '../../public/foto-album-lil-peep.jpg';
 import { SideBar } from './components/SideBar';
 import { Footer } from './components/Footer';
+import { collectionMix } from './collectionMix';
+const musics = infoArtists.map(artist => (
+  <a
+    key={artist.id}
+    className='bg-white/5 group rounded flex items-center gap-4  overflow-hidden hover:bg-white/10 transition-colors '
+  >
+    <Image src={artist.img} width={104} height={104} alt={`Capa do artista do ${artist.artist}`} />
+    <strong>{artist.nameMusic}</strong>
+
+    <button className=' w-12 h-12 flex items-center justify-center pl-1 rounded-full bg-green-400 text-black ml-auto mr-8 invisible group-hover:visible'>
+      <Play />
+    </button>
+  </a>
+));
+
+const mix = collectionMix.map(mix => (
+  <a key={mix.id} className='bg-white/5 p-3 rounded-md flex flex-col gap-2  hover:bg-white/10'>
+    <Image src={mix.img} className='w-full' width={600} height={600} alt='Capa da musica Akari' />
+    <strong className='font-semibold'>{mix.title}</strong>
+    <span className='text-sm text-zinc-400'>{mix.subTitle}</span>
+  </a>
+));
 
 const Home = () => {
   return (
@@ -31,127 +42,13 @@ const Home = () => {
               <ChevronRight />
             </button>
           </div>
-          <h1 className='font-semibold text-3xl mt-10'>Good Afternoon</h1>
+          <h1 className='font-semibold text-3xl mt-10'>Bom Dia</h1>
 
-          <div className='grid grid-cols-3 gap-4 mt-4'>
-            <a className='bg-white/5 group rounded flex items-center gap-4  overflow-hidden hover:bg-white/10 transition-colors '>
-              <Image src={imgAkari} width={104} height={104} alt='Capa da musica Akari' />
-              <strong>Akari</strong>
+          <div className='grid grid-cols-3 gap-4 mt-4'>{musics}</div>
 
-              <button className=' w-12 h-12 flex items-center justify-center pl-1 rounded-full bg-green-400 text-black ml-auto mr-8 invisible group-hover:visible'>
-                <Play />
-              </button>
-            </a>
+          <h2 className='font-semibold text-2xl mt-10'>Feito para  Murilo</h2>
 
-            <a className='bg-white/5 group rounded flex items-center gap-4  overflow-hidden hover:bg-white/10 transition-colors '>
-              <Image src={imgAkari} width={104} height={104} alt='Capa da musica Akari' />
-              <strong>Akari</strong>
-
-              <button className=' w-12 h-12 flex items-center justify-center pl-1 rounded-full bg-green-400 text-black ml-auto mr-8 invisible group-hover:visible'>
-                <Play />
-              </button>
-            </a>
-
-            <a className='bg-white/5 group rounded flex items-center gap-4  overflow-hidden hover:bg-white/10 transition-colors '>
-              <Image src={imgAkari} width={104} height={104} alt='Capa da musica Akari' />
-              <strong>Akari</strong>
-
-              <button className=' w-12 h-12 flex items-center justify-center pl-1 rounded-full bg-green-400 text-black ml-auto mr-8 invisible group-hover:visible'>
-                <Play />
-              </button>
-            </a>
-
-            <a className='bg-white/5 group rounded flex items-center gap-4  overflow-hidden hover:bg-white/10 transition-colors '>
-              <Image src={imgAkari} width={104} height={104} alt='Capa da musica Akari' />
-              <strong>Akari</strong>
-
-              <button className=' w-12 h-12 flex items-center justify-center pl-1 rounded-full bg-green-400 text-black ml-auto mr-8 invisible group-hover:visible'>
-                <Play />
-              </button>
-            </a>
-
-            <a className='bg-white/5 group rounded flex items-center gap-4  overflow-hidden hover:bg-white/10 transition-colors '>
-              <Image src={imgAkari} width={104} height={104} alt='Capa da musica Akari' />
-              <strong>Akari</strong>
-
-              <button className=' w-12 h-12 flex items-center justify-center pl-1 rounded-full bg-green-400 text-black ml-auto mr-8 invisible group-hover:visible'>
-                <Play />
-              </button>
-            </a>
-
-            <a className='bg-white/5 group rounded flex items-center gap-4  overflow-hidden hover:bg-white/10 transition-colors '>
-              <Image src={imgAkari} width={104} height={104} alt='Capa da musica Akari' />
-              <strong>Akari</strong>
-
-              <button className=' w-12 h-12 flex items-center justify-center pl-1 rounded-full bg-green-400 text-black ml-auto mr-8 invisible group-hover:visible'>
-                <Play />
-              </button>
-            </a>
-          </div>
-
-          <h2 className='font-semibold text-2xl mt-10'>Made for Murilo Silva</h2>
-
-          <div className='grid grid-cols-8 gap-4 mt-4'>
-            <a className='bg-white/5 p-3 rounded-md flex flex-col gap-2  hover:bg-white/10'>
-              <Image
-                src={imgPolyphia}
-                className='w-full'
-                width={120}
-                height={120}
-                alt='Capa da musica Akari'
-              />
-              <strong className='font-semibold'>Title</strong>
-              <span className='text-sm text-zinc-400'>Name Artist</span>
-            </a>
-
-            <a className='bg-white/5 p-3 rounded-md flex flex-col gap-2  hover:bg-white/10'>
-              <Image
-                src={imgPolyphia}
-                className='w-full'
-                width={120}
-                height={120}
-                alt='Capa da musica Akari'
-              />{' '}
-              <strong className='font-semibold'>Title</strong>
-              <span className='text-sm text-zinc-400'>Name Artist</span>
-            </a>
-
-            <a className='bg-white/5 p-3 rounded-md flex flex-col gap-2  hover:bg-white/10'>
-              <Image
-                src={imgPolyphia}
-                className='w-full'
-                width={120}
-                height={120}
-                alt='Capa da musica Akari'
-              />{' '}
-              <strong className='font-semibold'>Title</strong>
-              <span className='text-sm text-zinc-400'>Name Artist</span>
-            </a>
-
-            <a className='bg-white/5 p-3 rounded-md flex flex-col gap-2  hover:bg-white/10'>
-              <Image
-                src={imgPolyphia}
-                className='w-full'
-                width={120}
-                height={120}
-                alt='Capa da musica Akari'
-              />{' '}
-              <strong className='font-semibold'>Title</strong>
-              <span className='text-sm text-zinc-400'>Name Artist</span>
-            </a>
-
-            <a className='bg-white/5 p-3 rounded-md flex flex-col gap-2  hover:bg-white/10'>
-              <Image
-                src={imgPolyphia}
-                className='w-full'
-                width={120}
-                height={120}
-                alt='Capa da musica Akari'
-              />{' '}
-              <strong className='font-semibold'>Title</strong>
-              <span className='text-sm text-zinc-400'>Name Artist</span>
-            </a>
-          </div>
+          <div className='grid grid-cols-6 gap-4 mt-4'>{mix}</div>
         </main>
       </div>
       <Footer />
