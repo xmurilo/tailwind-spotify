@@ -24,7 +24,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className='flex flex-col items-center gap-2'>
+      <div className='flex flex-col items-center ml-28 gap-2'>
         <div className='flex items-center gap-6'>
           <Shuffle size={20} className='text-zinc-200' />
           <SkipBack size={20} className='text-zinc-200' />
